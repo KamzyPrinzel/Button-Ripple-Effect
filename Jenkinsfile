@@ -15,7 +15,7 @@ pipeline {
         stage ('Build Docker image'){
             steps{
                 script {
-                    sh 'docker build -t buttonRippleEffect:1 .'
+                    sh 'docker build -t button-ripple-effect:1.0 .'
                 }
             }
         }
