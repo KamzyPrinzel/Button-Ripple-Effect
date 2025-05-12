@@ -1,12 +1,14 @@
-pipeline{
-    agent any{
+pipeline {
+    agent any
 
-        stages{
-
-            stage('Check out'){
-                steps{
-                    checkout scmGit(branches: [[name:'*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/KamzyPrinzel/Animated-Search-Bar.git']])
-                }
+    stages {
+        stage('Check out') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[url: 'https://github.com/KamzyPrinzel/Button-Ripple-Effect.git']]
+                ])
             }
         }
     }
