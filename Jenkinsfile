@@ -11,5 +11,13 @@ pipeline {
                 ])
             }
         }
+
+        stage ('Build Docker image'){
+            steps{
+                script {
+                    sh 'docker build -t buttonRippleEffect:1 .'
+                }
+            }
+        }
     }
 }
